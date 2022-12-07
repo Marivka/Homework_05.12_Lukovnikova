@@ -4,45 +4,15 @@
 
 
 
-var array = FillArray(15);
-Print(array);
-Console.WriteLine();
-var count = GetCount(array);
-Console.WriteLine(count);
-
-int GetCount(int[] array)
+Console.WriteLine("Введите количество цифр ");
+int count = Convert.ToInt32(Console.ReadLine());
+int countMoreZero = 0;
+for (int i = 0; i < count; i++)
 {
-    int count = 0;
-    foreach(var item in array)
+    int num = Convert.ToInt32(Console.ReadLine());
+    if (num > 0)
     {
-        if(item > 0)
-        {
-            count++;
-        }
-    }
-    return count;
-}
-
-
-int[] FillArray(int length)
-{
-    int[] array = new int[length];
-    for(int i = 0; i < length; i++)
-    {
-        array[i] = new Random().Next(-100, 100);
-    }
-    return array;
-}
-
-void Print(int[] array)
-{
-    foreach(var item in array)
-    {
-        Console.Write($"{item}, ");
+        countMoreZero++;
     }
 }
-
-
-
-
-
+Console.WriteLine(countMoreZero);
